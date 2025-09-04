@@ -17,6 +17,15 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: false
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" 
+  info:
+    env:
+      enabled: true
 
 logging:
   level:
