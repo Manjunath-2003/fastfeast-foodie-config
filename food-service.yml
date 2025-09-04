@@ -1,0 +1,57 @@
+
+server:
+  port: 9092
+
+spring:
+  application:
+    name: "food-service"
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/foodservicedb
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+logging:
+  level:
+    root: DEBUG
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+
+
+
+
+#  profiles:
+#    active: prod
+#
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+#  cloud:
+#    openfeign:
+#      circuitbreaker:
+#        enabled: true
+#    eureka configurations
+#database in important
+#
+#resilience4j:
+#  circuitbreaker:
+#    configs:
+#      default:
+#        slidingWindowSize: 10
+#        permitted-number-of-calls-in-half-open-state: 2
+#        failure-rate-threshold: 50
+#        wait-duration-in-open-state: 10000
